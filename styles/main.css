@@ -288,11 +288,11 @@ body {
 .wholesale__item-title.isAdded .name {
   color: #EE6509; }
 
+.wholesale__item-title.isAdded .arrow svg path {
+  stroke: #EE6509; }
+
 .wholesale__item-title.isOpened .arrow {
   transform: rotate(180deg); }
-
-.wholesale__item-title.isOpened .arrow svg path {
-  stroke: #EE6509; }
 
 .wholesale__item-title:hover:before {
   opacity: 1;
@@ -324,7 +324,7 @@ body {
   .wholesale__item-body.isOpened {
     display: block; } }
 
-.wholesale__item:nth-child(n + 12) .wholesale__item-body {
+.wholesale__item:nth-child(n + 25) .wholesale__item-body {
   top: auto;
   bottom: 100%; }
 

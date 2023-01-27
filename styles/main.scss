@@ -293,12 +293,13 @@ body {
         &.isAdded .name {
             color: #EE6509;
         }
-
-        &.isOpened .arrow {
-            transform: rotate(180deg);
+        &.isAdded .arrow {
             svg path {
                 stroke: #EE6509;
             }
+        }
+        &.isOpened .arrow {
+            transform: rotate(180deg);
         }
 
 
@@ -333,7 +334,7 @@ body {
             }
         }
     }
-    &__item:nth-child(n + 12) &__item-body {
+    &__item:nth-child(n + 25) &__item-body {
         top: auto;
         bottom: 100%;
     }
