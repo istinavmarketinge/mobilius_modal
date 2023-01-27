@@ -10,9 +10,11 @@ class WholesaleModal {
             opener.addEventListener('click', () => {
                 console.log(opener.closest('.wholesale__item'));
                 if (document.querySelector('.wholesale__item-body.isOpened') && !opener.closest('.wholesale__item').querySelector('.wholesale__item-body').classList.contains('isOpened')) {
-                    document.querySelector('.wholesale__item-body.isOpened').classList.remove('isOpened')
+                    document.querySelector('.wholesale__item-body.isOpened').classList.remove('isOpened');
+                    opener.classList.remove('isOpened');
                 }
                 opener.closest('.wholesale__item').querySelector('.wholesale__item-body').classList.toggle('isOpened');
+                opener.classList.toggle('isOpened');
             })
         })
     }

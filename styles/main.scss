@@ -291,6 +291,13 @@ body {
             color: #EE6509;
         }
 
+        &.isOpened .arrow {
+            transform: rotate(180deg);
+            svg path {
+                stroke: #EE6509;
+            }
+        }
+
 
         &:hover {
             &:before {
@@ -322,6 +329,10 @@ body {
                 display: block;
             }
         }
+    }
+    &__item:nth-child(n + 12) &__item-body {
+        top: auto;
+        bottom: 100%;
     }
     &__item-model {
         display: flex;
@@ -437,9 +448,9 @@ body {
         }
         .count {
             padding-right: 41px;
-            flex: 1 1 auto;
             justify-content: space-between;
             @media all and (max-width: 768px) {
+                flex: 1 1 auto;
                 width: 100%;
                 padding-left: 10px;
                 padding-right: 5px;
@@ -465,6 +476,9 @@ body {
             font-size: 15px;
             line-height: 18px;
             color: #000000;
+            @media all and (max-width: 768px) {
+                margin-bottom: -3px;
+            }
         }
         .closer {
             width: 26px;
