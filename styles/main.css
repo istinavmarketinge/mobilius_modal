@@ -170,6 +170,9 @@ body {
   font-size: 0;
   cursor: pointer; }
 
+.wholesale__closer svg rect {
+  fill: none; }
+
 @media all and (max-width: 960px) {
   .wholesale__closer {
     width: 33px;

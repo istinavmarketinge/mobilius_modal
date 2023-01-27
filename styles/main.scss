@@ -176,6 +176,9 @@ body {
         width: 40px;
         font-size: 0;
         cursor: pointer;
+        svg rect {
+            fill: none;
+        }
         @media all and (max-width: 960px) {
             width: 33px;
             height: 33px;
