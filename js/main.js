@@ -10,7 +10,9 @@ class WholesaleModal {
             opener.addEventListener('click', () => {
                 console.log(opener.closest('.wholesale__item'));
                 if (document.querySelector('.wholesale__item-body.isOpened') && !opener.closest('.wholesale__item').querySelector('.wholesale__item-body').classList.contains('isOpened')) {
+                    console.log(123123123);
                     document.querySelector('.wholesale__item-body.isOpened').classList.remove('isOpened');
+                    document.querySelector('.wholesale__item-title.isOpened').classList.remove('isOpened');
                     opener.classList.remove('isOpened');
                 }
                 opener.closest('.wholesale__item').querySelector('.wholesale__item-body').classList.toggle('isOpened');
@@ -109,7 +111,33 @@ class WholesaleModal {
             document.querySelector('.deleteModal').classList.remove('isOpened');
         })
     }
+    makeColumns() {
+        if (window.innerWidth < 769) return;
+        //Define number of columns.
+        const x = 2;
+        //Create cols, store for later use.
+        var cols = [];
+        var items = document.querySelectorAll('.wholesale__item');
+        var length = items.length;
+        for(let i = 0; i < x; i++) {
+            var c = document.createElement("div");
+            c.className = "wholesale__column";
+            document.querySelector('.wholesale__items').appendChild(c);
+            cols.push(c);
+        }
+        //Move posts to cols.
+        document.querySelectorAll('.wholesale__item').forEach((post,index) => { 
+            console.log(post, index);
+            
+            if (index < length / x) {
+                cols[0].appendChild(post);
+            } else {
+                cols[1].appendChild(post);
+            }
+        })
+    }
     init() {
+        this.makeColumns();
         this.addModelsDropdownsOpenHandler();
         this.addPopupOpenHandler();
         this.addPopupCloseHandler();
@@ -122,6 +150,5 @@ class WholesaleModal {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log()
     const wholesaleModal = new WholesaleModal();
 });
